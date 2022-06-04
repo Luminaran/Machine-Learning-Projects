@@ -154,4 +154,5 @@ model5.compile(optimizer = 'adam', loss = 'sparse_categorical_crossentropy', met
 train_x, val_x, train_y, val_y = train_test_split(X, y, test_size = 0.1)                              
 model5.fit(train_datagen.flow(train_x, train_y), epochs = 50, validation_data =(val_x,val_y))# This dramatically increasaes the number of epochs needed, however the model eventually reaches an accuracy of 0.85 on both the training and validation data
 # In the end my VGG three layer with dropout and Image Augmentation is the best, so thats the one I'll save
-model5.save('final_model')# 0.85 accuracy
+model_path = '/dog_cat/model_save'
+model5.save(model_path)# 0.85 accuracy
